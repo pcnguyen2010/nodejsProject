@@ -1,0 +1,30 @@
+<div style="
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 20;
+    min-height: 25px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(27, 27, 40);
+    font-size: 12px;
+    font-style: italic;
+    color: white;
+    ">
+    <div style="padding-left: 20px;padding-top: 5px;">Copyright 2004</div>
+    <div style="padding-right: 20px;padding-top: 5px;">Term Privacy</div>
+</div>
+
+<script>
+    document.getElementById("mainmenu").onmouseover = function() {mouseOver()};
+        document.getElementById("mainmenu").onmouseout = function() {mouseOut()};
+
+        function mouseOver() {
+            document.getElementById("dropdown-content").style.height = 250;
+        }
+
+        function mouseOut() {
+            document.getElementById("dropdown-content").style.height = 0;
+        }
+</script>

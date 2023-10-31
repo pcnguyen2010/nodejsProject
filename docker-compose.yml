@@ -1,0 +1,9 @@
+version: '3'
+services:
+  my-compose-app:
+    build: .
+    env_file:
+      - ./config.env
+#Use this command to run docker compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build
+#Use this command to del docker and also the volumne: docker compose -f docker-compose.yml -f docker-compose-prod.yml down -v
+

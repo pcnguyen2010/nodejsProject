@@ -1,0 +1,55 @@
+
+<div class="banner">Cuong & Ty Nail Salon</div>
+    <div class="top-menu">
+        <div style="padding-left: 50px;display: flex;">
+            <button style="font-family: Arial, Helvetica, sans-serif;font-size: 16px;border: 1px solid white;border-radius: 5px;background-color: rgb(27, 27, 40);color: white;">beta version</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="practice" style="text-decoration: none;color: white;font-weight: 500;">Home</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="appointment" style="text-decoration: none;color: white;font-weight: 500;">Book</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="staff" style="text-decoration: none;color: white;font-weight: 500;">Our Staff</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="myAppointment" style="text-decoration: none;color: white;font-weight: 500;">My Appointment</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <div>
+                <i class="fa fa-search" style="font-size:15px"></i>
+            </div>
+          
+        </div>
+        <div></div>
+       
+        <div id="dropdown" class="dropdown" >
+            <button id ="dropbtn" class="dropbtn">For Admin Use Only</button>
+            <div id="dropdown-content" class="dropdown-content">
+                <ul class="mainmenu" id="mainmenu">
+                    <li><a href="">Employee</a></li>
+                    <li><a href="">Products</a>
+                      <ul class="submenu">
+                        <li><a href="">Nail Supply</a></li>
+                        <li><a href="">Furniture</a></li>
+                        <li><a href="">Nail Supply</a></li>
+                        <li><a href="">Furniture</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="">Customer</a></li>
+                  </ul>
+            </div>
+        </div> 
+    </div>
+
+   
+    
+
+    <script>
+        document.getElementById("dropbtn").addEventListener(
+            "click",() => {
+                let isLogin = <%= title %>;
+                if(!isLogin){
+                    document.getElementById("dropdown-content").style.display = 'none'
+                }
+            }
+        )
+
+        
+    </script>
