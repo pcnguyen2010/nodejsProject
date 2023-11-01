@@ -1,5 +1,5 @@
 FROM node:15-alpine
-ARG PORT=2000
+ARG PORT=3000
 ARG NODE_ENV
 ENV PORT=$PORT
 #Create app directory
@@ -23,6 +23,7 @@ COPY models models
 COPY views views
 COPY config.env config.env
 COPY server.js server.js 
+COPY js js
 
 #RUN npm install 
 RUN if [ "$NODE_ENV" = "development" ]; \
