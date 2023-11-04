@@ -1,0 +1,74 @@
+<style>
+    .product-section{
+        display: block;
+        border-top: 1px solid green;
+        border-bottom: 1px solid green;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 150px;
+        background-image: linear-gradient(to right, white , rgb(212, 159, 159));
+        margin-right: -100px;
+    }
+
+    .product-section .title{
+        padding-bottom: 20px;
+        font-size: 40px;font-family: Sofia, sans-serif;
+        color: white;
+    }
+    
+    .galary{ 
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .galary div{
+        width: 100%;
+    }
+
+    .galary div img{
+        width: 300px;
+        height: 350px;
+        border: 1px solid red;
+    }
+
+    .left , .right {
+        background-color: transparent;
+        border: none;
+        font-size:40px;
+       
+    }
+
+    .left{
+        position:absolute;
+        left:0;
+        top:50%;
+    }
+
+    .right{
+        position:absolute;
+        right:0;
+        top:50%;
+    }
+
+  
+</style>
+
+<div id="product-section" class="product-section">
+    <p id="title" class="title">Our Product</p>
+    <div class="galary" id="galary">
+        <div>
+            <span>
+                <button class="left"><i class="fa fa-arrow-circle-left"></i></button>
+                <img src="nailPic1.jpg">
+                <img src="nailPic2.jpg">
+                <button class="right"><i class="fa fa-arrow-circle-right"></i></button>
+            </span>
+        </div>
+    </div>  
+</div>
