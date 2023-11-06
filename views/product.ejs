@@ -3,11 +3,15 @@
         display: block;
         border-top: 1px solid green;
         border-bottom: 1px solid green;
-        text-align: center;
         padding-top: 20px;
         padding-bottom: 150px;
         background-image: linear-gradient(to right, white , rgb(212, 159, 159));
-        margin-right: -100px;
+        margin-left: 5%;
+        margin-right: -0.5%;
+        border: 1px solid red;
+        text-align: center;
+
+        --image-width:230px;
     }
 
     .product-section .title{
@@ -15,60 +19,144 @@
         font-size: 40px;font-family: Sofia, sans-serif;
         color: white;
     }
-    
-    .galary{ 
-        position: relative;
+
+    .gallary-wrap{
         display: flex;
-        flex-wrap: nowrap;
-        flex-direction: row;
+        position: relative;
+        text-align: center;
         justify-content: space-between;
-        margin-top: 10px;
-        margin-left: 10%;
-        margin-right: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
-    .galary div{
+    .galary-1, .galary-2, .galary-3{
         width: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding-left: 70px;
+        padding-right: 70px;
     }
 
-    .galary div img{
-        width: 300px;
-        height: 350px;
-        border: 1px solid red;
+    
+
+    .galary-1 img{
+        width: var(--image-width);
+        filter: grayscale(100);
+        transition: transform 1s;
+        border-radius: 10px;
+        box-shadow: 0 0 10px black;
+    }
+
+    .galary-2 img{
+        width: var(--image-width);
+        filter: grayscale(100);
+    }
+
+    .galary-3 img{
+        width: var(--image-width);
+        filter: grayscale(100);
+    }
+
+    .galary-1 img:hover{
+        filter: grayscale(0);
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+    .left{
+        width: 50px;
+        height: 30px;
+        position:absolute;
+        left:20px;
+        top:50%;
+    }
+
+    .right{
+        width: 50px;
+        height: 30px;
+        position:absolute;
+        right:20px;
+        top:50%;
     }
 
     .left , .right {
         background-color: transparent;
         border: none;
         font-size:40px;
-       
+        cursor: pointer;
     }
-
-    .left{
-        position:absolute;
-        left:0;
-        top:50%;
-    }
-
-    .right{
-        position:absolute;
-        right:0;
-        top:50%;
-    }
-
+    
   
 </style>
 
 <div id="product-section" class="product-section">
     <p id="title" class="title">Our Product</p>
-    <div class="galary" id="galary">
-        <div>
-            <span>
-                <button class="left"><i class="fa fa-arrow-circle-left"></i></button>
-                <img src="nailPic1.jpg">
-                <img src="nailPic2.jpg">
-                <button class="right"><i class="fa fa-arrow-circle-right"></i></button>
-            </span>
+
+    <div class="gallary-wrap" id="gallary-wrap">
+        <button class="left" id="left"><i class="fa fa-arrow-circle-left"></i></button>
+
+        <div class="galary-1" id="galary-1">
+            <img src="nailPic1.jpg">
+            <img src="nailPic1.jpg">
+            <img src="nailPic1.jpg">
         </div>
-    </div>  
+        <div  class="galary-2" id="galary-2">
+            <img src="nailPic2.jpg">
+            <img src="nailPic2.jpg">
+            <img src="nailPic2.jpg">
+        </div>
+        <div  class="galary-3" id="galary-3">
+            <img src="nailPic3.jpg">
+            <img src="nailPic3.jpg">
+            <img src="nailPic3.jpg">
+        </div>
+
+        <button class="right" id="right"><i class="fa fa-arrow-circle-right"></i></button>
+    </div>
+    
 </div>
+
+<script>
+    window.onload = function () {//initial loading
+        document.getElementById("galary-2").style.display = 'none';
+        document.getElementById("galary-3").style.display = 'none';
+    }
+
+    let currentIndex = 1;
+    let lastIndex = 2;
+
+    document.getElementById("right").addEventListener(
+        "click",() => {
+            
+            if(currentIndex == lastIndex){
+                //Do nothing
+            }else{
+                document.getElementById("galary-1").style.display = 'none';
+                document.getElementById("galary-2").style.display = 'grid';
+            }
+        }
+    )
+
+    document.getElementById("left").addEventListener(
+        "click",() => {
+            if(currentIndex == 0){
+                //do nothing
+            }else{ 
+                document.getElementById("galary-2").style.display = 'none';
+
+                document.getElementById("galary-1").style.display = 'grid';
+                
+                document.getElementById("galary-1").style.opacity = 0;
+                let opacity = 0;
+                setInterval(() => {
+                    document.getElementById("galary-1").style.opacity = opacity;
+                    opacity += 0.01;
+                }, 50);
+                
+                
+                
+            }
+            
+        }
+    )
+</script>
