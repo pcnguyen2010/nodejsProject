@@ -1,0 +1,143 @@
+<style>
+.supply-gallary{
+    display: flex;
+    margin-left: 0px;
+    margin-right: -100px;
+    border-bottom: 1px solid green;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    text-align: center;
+    background-color: purple;
+    background-image: linear-gradient(to right, rgb(232, 187, 232) , purple);
+
+
+    --image-supply-width: 550px;
+    --image-supply-height: 300px;
+}
+
+.supply-gallary p{
+    font-size: 40px;font-family: Sofia, sans-serif;
+    color: white;
+    margin-left: 40px;
+    width:200px
+}
+
+.slider-container{
+    position: relative;
+    width: var(--image-supply-width);
+    height: var(--image-supply-height);
+    overflow: hidden;
+    margin-left: 40px;
+   
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
+
+}
+
+.image-container{
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: black;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.btn:hover{
+    opacity: 1;
+}
+
+.btn.prev{
+    left:10px
+}
+
+.btn.next{
+    right:10px
+}
+
+.supply-description{
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
+    width: 180px;
+    margin-left: 40px;
+    padding: 20px;
+    font-size: 15px;
+    font-family: sans-serif;
+    color: white;
+    text-align: left;
+    letter-spacing: 1px;
+    text-indent: 20px;;
+    line-height: 20px;
+    
+}
+
+
+
+
+</style>
+
+
+<div class="supply-gallary" id="supply-gallary">
+    <p>Nail Supply</p>
+    <div class="slider-container" id="slider-container">
+        <div class="image-container">
+        <% for(const i in data) {%>
+            <img src="<%=data[i] %>">
+        <%}%>
+        </div>
+        <i class="fa fa-angle-double-left btn prev" ></i>
+        <i class="fa fa-angle-double-right btn next"></i>
+    </div>
+    <div id="supply-description" class="supply-description">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis, totam. Cupiditate placeat accusamus praesentium asperiores sit porro, harum, amet nesciunt est, commodi quidem. Sit quod, illo rem placeat adipisci quos?
+    </div>
+    
+</div>
+
+<script>
+    const imageContainer = document.querySelector(".image-container");
+    const next = document.querySelector(".next");
+    const prev = document.querySelector(".prev");
+    const imgS = document.querySelectorAll(".image-container img");
+    const imgWidth = Number((this.getComputedStyle(document.querySelector(".image-container img")).getPropertyValue('--image-supply-width')).replace('px',''));
+    //to set value for css variable: document.documentElement.style.setProperty('--my-variable-name', 'pink');
+    let currentImage = 1;
+    let timeout;
+
+    next.addEventListener("click",()=>{
+        currentImage++;
+        clearTimeout(timeout)
+        updateImg();
+    })
+
+    prev.addEventListener("click",()=>{
+        console.log("Response")
+        currentImage--;
+        clearTimeout(timeout)
+        updateImg();
+    })
+
+    updateImg();
+
+    function updateImg(){
+        if(currentImage > imgS.length){
+            currentImage = 1;
+        }else if(currentImage < 1){
+            currentImage = imgS.length;
+        }
+
+        imageContainer.style.transform = `translateX(-${(currentImage - 1) * imgWidth}px)`;
+
+        timeout = setTimeout(() =>{
+            currentImage++;
+            updateImg();
+        },3000)
+    }
+</script>

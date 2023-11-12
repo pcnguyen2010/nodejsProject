@@ -8,25 +8,25 @@
     <div class="central-brief-message"></div>
     <form action="/appointment" method="post">
         <div class="central-form">
-            <div>
+            <div style="background-color: rgb(231, 216, 216);letter-spacing: 1px;padding: 5px;">
                 <label> Your Name: </label>
             </div>
             <div>
                 <input type="text" id="customer_name" name="customer_name" placeholder="Your name.." required>
             </div>
-            <div>
+            <div style="background-color: rgb(231, 216, 216);letter-spacing: 1px;padding: 5px;">
                 <label>Time:</label>
             </div>
             <div>
                 <input type="text" id="appointment" name="appointment" placeholder="Enter your desired time.." required>
             </div>
-            <div>
+            <div style="background-color: rgb(231, 216, 216);letter-spacing: 1px;padding: 5px;">
                 <label>Date:</label>
             </div>
             <div>
                 <%- include('./include/calendar.ejs') %>
             </div>
-            <div>
+            <div style="background-color: rgb(231, 216, 216);letter-spacing: 1px;padding: 5px;">
                 <label>Employee Name:</label>
             </div>
             <div>
@@ -48,7 +48,7 @@
                 </select>
             </div>
             <div>
-                <label>Notes:</label>
+                <label  style="background-color: rgb(231, 216, 216);letter-spacing: 2px;padding: 5px;">Notes:</label>
             </div>
             <div>
                 <textarea  id="note" name="note" placeholder="Write something.." style="height:95px"></textarea>

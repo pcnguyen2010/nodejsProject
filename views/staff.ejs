@@ -16,9 +16,9 @@
                     <br>Availability:&nbsp;&nbsp;<%=empModel.availability%>
                     <br>Work Schedule:&nbsp;&nbsp;<%=empModel.work_schedule%>
                     <br>Skill:&nbsp;&nbsp;<%=empModel.skill%>
-                    <br>Rating:&nbsp;&nbsp; ******
+                    <br>Rating:&nbsp;&nbsp; <span style="color: rgb(190, 190, 47)">******</span>
                     <br>Comment:&nbsp;&nbsp; <%=empModel.comment_count%> <a href="/viewcomment?id=<%=empModel._id%>">comments</a>
-                    <br><a href="/comment?id=<%=empModel._id%>&first_name=<%=empModel.first_name%>&last_name=<%=empModel.last_name%>"><button type="button" style="color:white;background-color: var(--button-background-color);border-radius: 20px;">Add Comment</button></a>
+                    <br><a href="/comment?id=<%=empModel._id%>&first_name=<%=empModel.first_name%>&last_name=<%=empModel.last_name%>"><button type="button" style="color:black;border-radius: 20px;font-size: 11.5px;margin-top: 5px;">Add Comment</button></a>
                 </div>
             </div>
     <%})%>

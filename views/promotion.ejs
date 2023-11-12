@@ -1,0 +1,50 @@
+<style>
+@keyframes slideLeft{
+    from{
+        transform: translateX(-350px);
+    }
+
+    to{
+        transform: translateX(0px);
+    }
+}
+
+.coupon{
+    text-align: center;
+    padding-top: 50px;
+}
+
+.coupon1, .coupon2, .coupon3{
+    padding: 10px;
+    letter-spacing: 3px;
+}
+
+.coupon1{
+    animation-name: slideLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 2;
+    anination-direction: normal;
+
+
+}
+
+.coupon2{
+    animation-name: slideLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 2;
+    animation-direction: reverse;
+
+
+}
+
+</style>
+
+<div class="coupon" id="coupon">
+    <div class="coupon1"><h1>Happy Hour $1 set</h1></div>
+    <div class="coupon2"><h3>$20 off $50</h3></div>
+    <div class="coupon3"><h2>Buy 1 get 0 Free</h2></div>
+</div>
