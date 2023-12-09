@@ -68,6 +68,22 @@ app.get('/practice',(req,res)=>{
     res.render('practice',{title: 'Home'});
 });
 
+app.get('/service',(req,res)=>{
+    res.render('service',{title: 'Service'});
+});
+
+app.get('/service_hand',(req,res)=>{
+    res.render('service_hand',{title: 'Service Hand'});
+});
+
+app.get('/service_foot',(req,res)=>{
+    res.render('service_foot',{title: 'Service Foot'});
+});
+app.get('/service_combo',(req,res)=>{
+    res.render('service_combo',{title: 'Service Combo'});
+});
+
+
 app.get('/about',(req,res)=>{
     res.render('aboutUs',{title: 'About'});
 });

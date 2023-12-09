@@ -1,0 +1,67 @@
+.service-hand{
+    display: block;
+}
+
+.service-hand-content{
+    /*width: 750px;*/
+    right: 0px;
+    height: 2000px;
+    /*background-color: yellow; */   
+    position: static;
+    height:fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.thumbnail-description > div{
+    margin-left: 10px;
+    margin-right: 10px;
+
+    &:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 5px;
+        font-weight:900;
+        text-transform: capitalize;
+        letter-spacing: 0.2vw;
+    }
+
+    &:nth-child(2){
+        text-indent: 30px;
+        margin-bottom: 10px;
+        font-size: 1.15vw;
+        font-family: 'Roboto',sans-serif;
+    }
+    &:nth-child(3){
+        display: flex;
+        direction: rtl;
+    }
+}
+
+.button-booknow{
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border-color: transparent;
+    padding: 1px 10px;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.2vw;
+    margin-bottom: 5px;
+}
+
+.button-booknow :hover{
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+.left-menu{
+    position: absolute;
+    margin-top: 130;
+    margin-left: 0;
+    left: 0px;
+    width: $left-menu-width;
+    height: 100%;
+    border: 1px solid black;
+    background-color: rgb(27, 27, 40);
+    border: 4px solid green;
+}
+
+.left-menu li{
+    margin-bottom: 25px;
+    list-style-type: none; /* Remove bullets */
+    padding-left: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+.left-menu a{
+    text-decoration: none;
+    color: black;
+}

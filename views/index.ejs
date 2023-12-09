@@ -1,87 +1,12 @@
 <html lang="us">
 <%- include('./include/header.ejs') %>
-<style>
-    :root {
-      --test-border-color: transparent;
-    }
- 
-    .top{
-        border: 1px solid var(--test-border-color);
-        margin-left: 100px;
-        margin-bottom: 0px;
-        height:150px;
-    }
-
-    .center{
-        display: flex;
-    }   
-    
-    .picture{
-        border: 1px solid var(--test-border-color);
-        width: 60%;
-        height: 290px;
-    }
-
-    .picture-description{
-        width: 40%; 
-        height: 290px;
-        padding-left: 40px;
-        padding-right: 20px;
-    }
-
-
-    /* iphone 6, 6s, 7, 8 */
-    @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) { 
-        .center{
-            display: block;
-        }
-
-        .picture-description{
-            margin-top: 130px;
-            padding-right: 0px;
-            width: 77%; 
-        }
-    }
-
-   
-   
-</style>
 <body>
     <%- include('./include/top.ejs')  %>
-    <%- include('./include/center_left_nav.ejs')  %>
-    <div class="top">
-        <p style="font-size: 20px;">Trending Nail 2023 - 2024</p>
-        <p style="font-size: 30px;font-family: Sofia, sans-serif;">Our collections - And Our Promotions</p>
-    </div>
-
-    <div style="margin-left: 100px;">
-        <div class="center">
-            <div class="picture">
-                <img src="indexphoto.png">
-            </div>
-
-            <div class="picture-description">
-            <p style="font-family: 'Roboto',sans-serif;text-indent: 50px;line-height: 1.6;">
-                Cuong & Ty provides excellent nail service.  We are so thrilled with 
-                our career that we can offer offsite work.  Cuong & Ty provides excellent nail service. 
-                We are so thrilled with  our career that we can offer offsite work. 
-                Cuong & Ty provides excellent nail service.  We are so thrilled with 
-                our career that we can offer offsite work.  Cuong & Ty provides excellent nail service. 
-                We are so thrilled with  our career that we can offer offsite work. 
-                Cuong & Ty provides excellent nail service.  We are so thrilled with 
-                our career that we can offer offsite work.  Cuong & Ty provides excellent nail service. 
-                We are so thrilled with  our career that we can offer offsite work. 
-            </p>
-            </div>
-        </div>
-    </div>
-    <%- include('./team.ejs') %>
-    <%- include('./product.ejs') %>
-    <%- include('./supply.ejs') %>
-    <%- include('./promotion.ejs') %>
-
+    <%- include('./index_intro.ejs') %>
+    <%- include('./index_team.ejs') %>
+    <%- include('./index_product.ejs') %>
+    <%- include('./index_supply.ejs') %>
+    <%- include('./index_promotion.ejs') %>
     <%- include('./include/termAgreement.ejs') %>
-
-    
 </body>
 </html>

@@ -1,0 +1,18 @@
+.service-foot{
+    display: block;
+}
+
+.service-foot-content{
+    /*width: 750px;*/
+    right: 0px;
+    height: 2000px;
+    /*background-color: yellow; */   
+    position: static;
+    height:fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}

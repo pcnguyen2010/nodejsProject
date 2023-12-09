@@ -1,148 +1,43 @@
-<style>
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-}
-
-/* Dropdown Button */
-.dropbtn{
-    background-color: var(--button-background-color);
-    color: white;
-    padding: 0;
-    border: 1px solid white;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    padding: 5px;
-    width: 150px;
-    margin-right: 5px;
-    transition: 1s;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    position: absolute;
-    background-color: rgb(27, 27, 40);
-    padding-right: 19px;
-    padding-left: 20px;
-    width: 110px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    line-height: 2.6;
-    transition: all 1s ease-in;
-    overflow:hidden;
-    height:0;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    text-decoration: none;
-    display: block;
-    background-color: rgb(67, 67, 65);
-    color: white;
-    font-size: 12.5px;
-    padding-left: 6px;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-bottom: 5px;
-    line-height: 25px;
-    border-radius: 5px;
-    border: 1px solid rgb(62, 60, 60);
-    /*box-shadow: 1px 1px lightblue;*/
-} 
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    height: 100px;
-}
-
-
-
-.dropdown-content a:hover {
-    background-color: var(--button-background-color);
-    transition: 0.1s;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: rgb(68, 68, 66);
-    color:  white;
-    transition: 0.1s;
-}
-
-
-.mainmenu, .submenu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.submenu {
-    overflow: hidden;
-    max-height: 0;
-    -webkit-transition: all 3s ease-out;
-}
-
-.mainmenu li:hover .submenu {
-
-    display: block;
-    max-height: 200px;
-    padding: 10px;
-}
-</style>
-
-<div class="banner">Cuong & Ty Nail Salon</div>
-    <div class="top-menu">
-        <div style="padding-left: 50px;display: flex;">
-            <button style="font-family: Arial, Helvetica, sans-serif;font-size: 16px;border: 1px solid white;border-radius: 5px;background-color: rgb(27, 27, 40);color: white;">beta version</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="practice" style="text-decoration: none;color: white;font-weight: 500;">Home</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="appointment" style="text-decoration: none;color: white;font-weight: 500;">Book</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="staff" style="text-decoration: none;color: white;font-weight: 500;">Our Staff</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="myAppointment" style="text-decoration: none;color: white;font-weight: 500;">My Appointment</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            
-            <div>
-                <i class="fa fa-search" style="font-size:15px"></i>
-            </div>
-          
-        </div>
-        <div></div>
-       
-        <div id="dropdown" class="dropdown" >
-            <button id ="dropbtn" class="dropbtn">For Admin Use Only</button>
-            <div id="dropdown-content" class="dropdown-content">
-                <ul class="mainmenu" id="mainmenu">
-                    <li><a href="">Employee</a></li>
-                    <li class="li-product" id="li-product"><a href="">Products</a>
-                      <ul class="submenu">
-                        <li><a href="">Nail Supply</a></li>
-                        <li><a href="">Furniture</a></li>
-                        <li><a href="">Nail Supply</a></li>
-                        <li><a href="">Furniture</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="">Customer</a></li>
-                  </ul>
-            </div>
-        </div> 
+<div class="main" id="main">
+    <div class="main-banner" id="main-banner">
+        Cuong & Ty Nail Salon
+    </div>
+    <div class="main-menu" id="main-menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><%- include('./dropDownServiceMenu.ejs')  %></li>
+            <li><a href="appointment">Book</a></li>
+            <li><a href="sfaff">Staff</a></li>
+            <li><a href="myAppointment">My Appointment</a></li>
+            <li><a href="about">About</a></li>
+            <li><i class="fa fa-search" style="font-size:15px;border: 1px solid yellow;"></i></li>
+        </ul>
     </div>
 
     <script>
-        document.getElementById("dropbtn").addEventListener(
-            "click",() => {
-                let isLogin = <%= title %>;
-                if(!isLogin){
-                    document.getElementById("dropdown-content").style.display = 'none'
-                }
-            }
-        )
-
-        document.getElementById("dropbtn").addEventListener(
-            "mouseover",() => {
-                document.getElementById("dropdown-content").style.height = "100px";
-            }
-        )
-
-
+        var bannerHeight = document.getElementById("main").offsetHeight;
+        document.documentElement.style.setProperty('--banner-width', bannerHeight);
+        var h = window.getComputedStyle(document.documentElement.getPropertyValue('--banner-width'));
     </script>
+</div>
+
+
+
+<script>
+    document.getElementById("dropbtn").addEventListener(
+        "click",() => {
+            let isLogin = <%= title %>;
+            if(!isLogin){
+                document.getElementById("dropdown-content").style.display = 'none'
+            }
+        }
+    )
+
+    document.getElementById("dropbtn").addEventListener(
+        "mouseover",() => {
+            document.getElementById("dropdown-content").style.height = "100px";
+        }
+    )
+
+
+</script>

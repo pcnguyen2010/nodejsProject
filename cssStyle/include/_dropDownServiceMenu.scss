@@ -1,0 +1,53 @@
+.service-dropdown{
+    margin: 0;
+}
+
+.arrow {
+    font-size: 11px;
+}
+
+
+.service-dropbtn{
+    display: block;
+    color: white;
+    padding-right: 30px;
+    text-decoration: none;
+    font-size: 1.3vw;
+    font-family: 'Trirong',sans-serif;
+    letter-spacing: 0.07vw;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.service-dropdown-content {
+    position: absolute;
+    background-color: rgb(231, 124, 152);
+    margin-top: 20px;
+    width: 100px;
+    height:0;
+    line-height: 2.6;
+    transition: all 1s ease-in;
+    overflow:hidden;
+} 
+
+/* Show the dropdown menu on hover */
+.service-dropdown:hover .service-dropdown-content {
+    height: 130px;
+}
+
+.service-mainmenu{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.service-dropdown-content li{
+  margin-left: -20px;
+  list-style: none;
+}
+
+.service-dropdown-content li:hover {
+    font-weight: bold;
+    transition: 0.1s;
+}

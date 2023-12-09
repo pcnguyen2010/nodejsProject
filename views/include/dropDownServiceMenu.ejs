@@ -1,0 +1,63 @@
+<div id="service-dropdown" class="service-dropdown" >
+  <span id ="service-dropbtn" class="service-dropbtn">Service&nbsp;<span class="arrow">&#9660;</span></span>
+  <div id="service-dropdown-content" class="service-dropdown-content">
+      <ul class="service-mainmenu" id="service-mainmenu">
+        <li><span class="hand" id="hand" style="color: white;">Hand</span></li>
+        <li><span class="foot" id="foot" style="color: white;">Foot</span></li>
+        <li><span class="combo" id="combo" style="color: white;">Combo</span></li>
+        <li><span class="services" id="services" style="color: white;">All Services</span></li>
+    </ul>
+  </div>
+</div> 
+
+<script>
+     document.getElementById("service-dropbtn").addEventListener(
+        "click",() => {
+          
+          window.location.href = 'http://localhost:3000/service';
+          document.getElementById('service-hand').style.display = 'none';
+          document.getElementById('service-foot').style.display = 'none';
+          document.getElementById('service-combo').style.display = 'none';
+        }
+     )
+
+    document.getElementById("hand").addEventListener(
+        "click",() => {
+            document.getElementById('service-foot').style.display = 'none';
+            document.getElementById('service-combo').style.display = 'none';
+            document.getElementById('service-hand').style.display = 'block';
+         
+        }
+    )
+
+    document.getElementById("foot").addEventListener(
+        "click",() => {
+          
+            document.getElementById('service-foot').style.display = 'block';
+            document.getElementById('service-hand').style.display = 'none';
+            document.getElementById('service-combo').style.display = 'none';
+        }
+    )
+
+    document.getElementById("combo").addEventListener(
+        "click",() => {
+          
+            document.getElementById('service-foot').style.display = 'none';
+            document.getElementById('service-hand').style.display = 'none';
+            document.getElementById('service-combo').style.display = 'block'; 
+        
+        }
+    )
+
+    document.getElementById("services").addEventListener(
+        "click",() => {
+          /*
+            document.getElementById("service-foot-content").style.display = 'none'
+            document.getElementById("service-hand-content").style.display = 'none'
+            document.getElementById("servie-services-content").style.display = 'none'
+
+            document.getElementById("servie-combo-content").style.display = 'block'  
+          */
+        }
+    )
+</script>

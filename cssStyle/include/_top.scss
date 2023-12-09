@@ -1,0 +1,144 @@
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown Button */
+.dropbtn{
+    background-color: var(--button-background-color);
+    color: white;
+    padding: 0;
+    border: 1px solid white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px;
+    width: 150px;
+    margin-right: 5px;
+    transition: 1s;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    position: absolute;
+    background-color: rgb(27, 27, 40);
+    padding-right: 19px;
+    padding-left: 20px;
+    width: 110px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    line-height: 2.6;
+    transition: all 1s ease-in;
+    overflow:hidden;
+    height:0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    text-decoration: none;
+    display: block;
+    background-color: rgb(67, 67, 65);
+    color: white;
+    font-size: 12.5px;
+    padding-left: 6px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: 5px;
+    line-height: 25px;
+    border-radius: 5px;
+    border: 1px solid rgb(62, 60, 60);
+    /*box-shadow: 1px 1px lightblue;*/
+} 
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    height: 100px;
+}
+
+
+
+.dropdown-content a:hover {
+    background-color: var(--button-background-color);
+    transition: 0.1s;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgb(68, 68, 66);
+    color:  white;
+    transition: 0.1s;
+}
+
+
+.mainmenu, .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: all 3s ease-out;
+}
+
+.mainmenu li:hover .submenu {
+
+    display: block;
+    max-height: 200px;
+    padding: 10px;
+}
+
+
+
+
+.main{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to right, rgb(231, 124, 152) , rgb(242, 9, 149));
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    text-shadow: 1px 1px 5px black;
+    z-index: 10000;
+}
+
+.main .main-banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Tangerine', serif;
+    font-size: 4vw;
+    padding-top: 4vh;
+    padding-bottom: 3vh;
+   
+}
+
+.main .main-menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 5;
+    overflow: hidden;
+    
+}    
+.main .main-menu li {
+    float: left;
+}
+   
+.main .main-menu    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding-right: 30px;
+    text-decoration: none;
+    font-size: 1.3vw;
+    font-family: 'Trirong',sans-serif;
+    letter-spacing: 0.07vw;
+}
+    
+.main .main-menu    li a:hover {
+    background-color: #111111;
+}
+
+

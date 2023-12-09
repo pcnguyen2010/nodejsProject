@@ -1,0 +1,59 @@
+.product-section{
+    display: block;
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 150px;
+    /*background-image: linear-gradient(to right, white , rgb(212, 159, 159));*/
+    margin-right: 0px;
+
+    background-image: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png");
+   
+    --image-width:230px;
+}
+
+.product-section .title{
+    padding-bottom: 20px;
+    font-size: 40px;font-family: Sofia, sans-serif;
+}
+
+.gallary-wrap{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.gallary-1, .gallary-2, .gallary-3{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.gallary-1 img, .gallary-2 img, .gallary-3 img{
+    width: var(--image-width);
+    transition: transform 1s;
+    border-radius: 10px;
+    border: 0.5px solid white;
+    box-shadow: 0 0 10px rgb(77, 75, 75);
+}
+
+.gallary-1 img:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.left{
+    margin-right: 20px;
+}
+
+.right{
+    margin-left: 20px;
+}
+
+.left , .right {
+    background-color: transparent;
+    border: none;
+    font-size:40px;
+    cursor: pointer;
+}
