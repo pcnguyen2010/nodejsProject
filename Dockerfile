@@ -7,14 +7,6 @@ WORKDIR app
 #Install app dependencies
 COPY package*.json ./
 
-
-
-
-
-#If you are building your code for production
-# RUN npm ci --omit=dev
-
-#Bundle app source
 COPY controller controller 
 COPY cssStyle cssStyle
 COPY image image
@@ -25,6 +17,14 @@ COPY config.env config.env
 COPY server.js server.js 
 COPY js js
 
+
+
+#If you are building your code for production
+# RUN npm ci --omit=dev
+
+#Bundle app source
+
+
 RUN npm install     
 
 EXPOSE $PORT
@@ -33,7 +33,7 @@ EXPOSE $PORT
 CMD npm run dev
 
 #This is use with:   docker build . -t pnguyen/my-node-js-1 
-#to run with volumn: docker run --name my-container -p 1234:2000 -d  -v $PWD/views:/app/views  pnguyen/my-node-js-1  
+#to run with volumn: docker network create jenkins
 # $PWD/views:/app/views => argumnet on left of ':',it is your machine.  Argument on the right of ':', it is your container  
 # $PWD/views:/app/views => any changes under 'views' folder, it will take affect withour rebuild image.
 #IMPORTANT to note for command CMD npm run dev,  in package.json, under scripts, 'start' is default, to run it, use
